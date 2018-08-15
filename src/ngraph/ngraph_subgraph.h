@@ -29,17 +29,17 @@ class SgNgraphSelector : public SubgraphSelector {
  public:
   SgNgraphSelector() {}
 
-  bool Select(const nnvm::Graph &g, const nnvm::Node &n) override {
+  bool Select(const nnvm::Node &n) override {
     bool match = !n.is_variable() && (n.attrs.name.substr(0, 6) == "ngraph");
     return match;
   }
 
-  bool SelectInput(const nnvm::Graph &g, const nnvm::Node &n,
+  bool SelectInput(const nnvm::Node &n,
                    const nnvm::Node &new_node) override {
     return false;
   }
 
-  bool SelectOutput(const nnvm::Graph &g, const nnvm::Node &n,
+  bool SelectOutput(const nnvm::Node &n,
                     const nnvm::Node &new_node) override {
     return false;
   }

@@ -34,6 +34,7 @@
 #include "../common/utils.h"
 #include "../common/exec_utils.h"
 #include "../operator/subgraph/subgraph_property.h"
+#include "../operator/subgraph/default_subgraph_property.h"
 
 #if MXNET_USE_NGRAPH == 1
 #include "../ngraph/ngraph_compiler.h"
